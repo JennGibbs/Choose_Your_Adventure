@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Decision That Changed Everything</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .choice {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .choice:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Decision That Changed Everything</h1>
+    <p>You wake up on a typical Monday morning, groggy and dreading the day ahead. As you sip your coffee, you wonder how you can make your life better. Suddenly, you receive an email notification. It's a reminder to check out Inbox News, the newsletter you subscribed to a few days ago. You remember how everyone says it’s life-changing. Do you decide to read today's Inbox News or skip it?</p>
+    <a href="#" class="choice" onclick="step1('read')">Read Inbox News</a>
+    <a href="#" class="choice" onclick="step1('skip')">Skip Inbox News</a>
+    <div id="step2" class="result"></div>
+    <div id="step3" class="result"></div>
+</div>
+
+<script>
+    function step1(choice) {
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        step2.innerHTML = '';
+        step3.innerHTML = '';
+
+        if (choice === 'read') {
+            step2.innerHTML = `
+                <p>You decide to give Inbox News a chance. As you read through the latest updates, you come across a fascinating article about personal productivity hacks. Inspired, you decide to try out one of the tips today. Which tip do you choose?</p>
+                <a href="#" class="choice" onclick="step2A()">The 5-minute rule</a>
+                <a href="#" class="choice" onclick="step2B()">The Pomodoro technique</a>
+            `;
+        } else {
+            step2.innerHTML = `
+                <p>You decide to skip Inbox News. As you go about your day, you feel a sense of monotony creeping in. Your work feels uninspired and you struggle to stay focused. You wonder if reading Inbox News could have given you the boost you needed. Do you:</p>
+                <a href="#" class="choice" onclick="step2C()">Read Inbox News during lunch break</a>
+                <a href="#" class="choice" onclick="step2D()">Carry on with your day</a>
+            `;
+        }
+    }
+
+    function step2A() {
+        const step3 = document.getElementById('step3');
+        step3.innerHTML = `
+            <p>You decide to try the 5-minute rule. You set a timer for 5 minutes and dive into a task you’ve been procrastinating on. To your surprise, you make significant progress and feel a sense of accomplishment. The momentum carries you through the rest of your day. Inspired by your productive morning, you check Inbox News every day for more tips. Your productivity soars, and you feel more in control of your life.</p>
+        `;
+    }
+
+    function step2B() {
+        const step3 = document.getElementById('step3');
+        step3.innerHTML = `
+            <p>You decide to try the Pomodoro technique. You work in focused 25-minute intervals with short breaks in between. The structured approach helps you stay on track, and you find yourself completing tasks more efficiently. You realize how much Inbox News has improved your work habits, and you eagerly look forward to each edition for more insights.</p>
+        `;
+    }
+
+    function step2C() {
+        const step3 = document.getElementById('step3');
+        step3.innerHTML = `
+            <p>During your lunch break, you decide to give Inbox News a read. You come across an article about balancing work and life effectively. Motivated by the practical tips, you apply them to your afternoon tasks. You notice an improvement in your focus and productivity. From that day on, Inbox News becomes your go-to source for staying informed and motivated.</p>
+        `;
+    }
+
+    function step2D() {
+        const step3 = document.getElementById('step3');
+        step3.innerHTML = `
+            <p>You decide to carry on with your day. As the hours drag on, you struggle to stay focused and productive. By the end of the day, you feel drained and unaccomplished. Reflecting on your day, you remember the missed opportunity to read Inbox News. You decide to make it a habit to read Inbox News every morning, knowing that it could help you avoid days like this in the future.</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
